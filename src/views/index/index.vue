@@ -2,13 +2,16 @@
   <div class="home_wrap">
     <!-- 后台轮播图 -->
 
-    <van-swipe :autoplay="3000" class="swiper-container">
+    <van-swipe
+      :autoplay="3000"
+      class="swiper-container"
+    >
       <van-swipe-item>
         <router-link :to="'#'">
           <img
             src="../../assets/images/banner/1.png"
             style="border-radius: 10px"
-          />
+          >
         </router-link>
       </van-swipe-item>
       <van-swipe-item>
@@ -16,7 +19,7 @@
           <img
             src="../../assets/images/banner/2.png"
             style="border-radius: 10px"
-          />
+          >
         </router-link>
       </van-swipe-item>
       <van-swipe-item>
@@ -24,7 +27,7 @@
           <img
             src="../../assets/images/banner/3.png"
             style="border-radius: 10px"
-          />
+          >
         </router-link>
       </van-swipe-item>
       <van-swipe-item>
@@ -32,7 +35,7 @@
           <img
             src="../../assets/images/banner/4.png"
             style="border-radius: 10px"
-          />
+          >
         </router-link>
       </van-swipe-item>
     </van-swipe>
@@ -51,7 +54,10 @@
     </div>
     <!-- 滚动通知 -->
     <div class="notice_root">
-      <img class="notice_icon" src="../../assets/images/index/notice.png" />
+      <img
+        class="notice_icon"
+        src="../../assets/images/index/notice.png"
+      >
       <div class="container">
         <van-notice-bar
           class="notice_content"
@@ -86,12 +92,12 @@
                   v-if="nav_active == 0"
                   class="nav_img"
                   src="../../assets/images/category/HOTa.png"
-                />
+                >
                 <img
                   v-else
                   class="nav_img"
                   src="../../assets/images/category/HOT.png"
-                />
+                >
                 <span class="ppl">Popular</span>
               </div>
             </template>
@@ -103,12 +109,12 @@
                   v-if="nav_active == 1"
                   class="nav_img"
                   src="../../assets/images/category/PGa.png"
-                />
+                >
                 <img
                   v-else
                   class="nav_img"
                   src="../../assets/images/category/PG.png"
-                />
+                >
                 <span class="ppl">PG</span>
               </div>
             </template>
@@ -120,12 +126,12 @@
                   v-if="nav_active == 2"
                   class="nav_img"
                   src="../../assets/images/category/PPa.png"
-                />
+                >
                 <img
                   v-else
                   class="nav_img"
                   src="../../assets/images/category/PP.png"
-                />
+                >
                 <span class="ppl">PP</span>
               </div>
             </template>
@@ -137,12 +143,12 @@
                   v-if="nav_active == 3"
                   class="nav_img"
                   src="../../assets/images/category/TADAa.png"
-                />
+                >
                 <img
                   v-else
                   class="nav_img"
                   src="../../assets/images/category/TADA.png"
-                />
+                >
                 <span class="ppl">TADA</span>
               </div>
             </template>
@@ -154,12 +160,12 @@
                   v-if="nav_active == 4"
                   class="nav_img"
                   src="../../assets/images/category/JDBa.png"
-                />
+                >
                 <img
                   v-else
                   class="nav_img"
                   src="../../assets/images/category/JDB.png"
-                />
+                >
                 <span class="ppl">JDB</span>
               </div>
             </template>
@@ -171,12 +177,12 @@
                   v-if="nav_active == 5"
                   class="nav_img"
                   src="../../assets/images/category/CPa.png"
-                />
+                >
                 <img
                   v-else
                   class="nav_img"
                   src="../../assets/images/category/CP.png"
-                />
+                >
                 <span class="ppl">CP</span>
               </div>
             </template>
@@ -197,34 +203,37 @@
         :key="idx"
         class="new-list"
       >
-        <div v-for="(game_t, tidx) in game" :key="tidx">
+        <div
+          v-for="(game_t, tidx) in game"
+          :key="tidx"
+        >
           <div class="c-sm-des">
             <!-- <img :src="'../../assets/images/category/'+idx +'a.png'" class="sec-img" /> -->
             <img
               v-if="idx == 'PG'"
               src="../../assets/images/category/PGa.png"
               class="sec-img"
-            />
+            >
             <img
               v-if="idx == 'JDB'"
               src="../../assets/images/category/JDBa.png"
               class="sec-img"
-            />
+            >
             <img
               v-if="idx == 'TADA'"
               src="../../assets/images/category/TADAa.png"
               class="sec-img"
-            />
+            >
             <img
               v-if="idx == 'PP'"
               src="../../assets/images/category/PPa.png"
               class="sec-img"
-            />
+            >
             <img
               v-if="idx == 'CP'"
               src="../../assets/images/category/CPa.png"
               class="sec-img"
-            />
+            >
             <!-- <span class="sec-title">{{ idx}}</span> -->
           </div>
           <div class="game-list">
@@ -246,8 +255,11 @@
                   v-if="!item.is_works"
                   src="../../assets/images/common/nowork.png"
                   class="nowork"
-                />
-                <div v-if="item.origin != 'CP'" class="game_item_pg_name">
+                >
+                <div
+                  v-if="item.origin != 'CP'"
+                  class="game_item_pg_name"
+                >
                   {{ item.game_name }}
                 </div>
               </div>
@@ -272,15 +284,28 @@
     </div>
 
     <!--弹窗公告1-->
-    <div v-show="show_tc" class="popup" @click="show_tc = false">
-      <div class="tc_content" @click.t.stop="a = 1">
-        <img src="../../assets/images/logo/logo.png" class="tc_logo" />
-        <div class="notice_html" v-html="alter_notice" />
+    <div
+      v-show="show_tc"
+      class="popup"
+      @click="show_tc = false"
+    >
+      <div
+        class="tc_content"
+        @click.t.stop="a = 1"
+      >
+        <img
+          src="../../assets/images/logo/logo.png"
+          class="tc_logo"
+        >
+        <div
+          class="notice_html"
+          v-html="alter_notice"
+        />
         <img
           src="../../assets/images/common/close.png"
           class="close_notice"
           @click="closeNotice()"
-        />
+        >
       </div>
     </div>
     <!--弹窗公告2-->
@@ -290,14 +315,25 @@
       @click="closeRechargeTip()"
     >
       <div class="tc_content2">
-        <img src="../../assets/images/logo/logo.png" class="tc_logo" />
-        <div class="tc_head">Bônus Extra De Depósito Inicial</div>
+        <img
+          src="../../assets/images/logo/logo.png"
+          class="tc_logo"
+        >
+        <div class="tc_head">
+          Bônus Extra De Depósito Inicial
+        </div>
         <table id="tc-table">
-          <tr style="color: #111" class="tc_bgw">
+          <tr
+            style="color: #111"
+            class="tc_bgw"
+          >
             <th>Primeira recarga</th>
             <th>Valor Da Recompensa</th>
           </tr>
-          <tr v-for="(item, index) in rechargeConfigList" :key="index">
+          <tr
+            v-for="(item, index) in rechargeConfigList"
+            :key="index"
+          >
             <td>≥{{ item.min_money }}</td>
             <td>{{ item.gift_amount }}</td>
           </tr>
@@ -322,20 +358,29 @@
             />
             <span style="color: #fff">Ocultar permanentemente</span>
           </div>
-          <div class="tcbtn" @click="$router.push('recharge')">Prosseguir</div>
-          <div class="clear"></div>
+          <div
+            class="tcbtn"
+            @click="$router.push('recharge')"
+          >
+            Prosseguir
+          </div>
+          <div class="clear" />
         </div>
 
         <img
           src="../../assets/images/common/close.png"
           class="close_recharge_tc"
           @click="closeRechargeTip()"
-        />
+        >
       </div>
     </div>
 
     <!-- 游戏盒子-->
-    <div v-show="show_game_box" id="bigBox" class="game-box">
+    <div
+      v-show="show_game_box"
+      id="bigBox"
+      class="game-box"
+    >
       <!--    <div class="game-box" id="bigBox" v-show="true">-->
       <!-- <iframe :src="game_url" frameborder="0" id="myiframe"></iframe> -->
       <div class="back_to_desk">
@@ -343,7 +388,7 @@
           src="../../assets/images/common/close.png"
           class="close_game_btn"
           @click="beforeCloseGame()"
-        />
+        >
       </div>
     </div>
 
@@ -355,21 +400,34 @@
       <img src="../../assets/images/index/download.png" width="100" />
     </a> -->
     <div id="indexbr_box">
-      <a v-if="this.insLink" :href="this.insLink" target="_blank" class="telegram"><img 
+      <a
+        v-if="this.insLink"
+        :href="this.insLink"
+        target="_blank"
+        class="telegram"
+      ><img 
         src="../../assets/images/index/ins.png"
         class="invitation"
         width="100"
         style="border-radius: 20px;"
-      /></a>
-      <a v-if="this.tglink" :href="tglink" target="_blank" class="telegram">
-        <img src="../../assets/images/index/tg2.png" width="100" />
+      ></a>
+      <a
+        v-if="this.tglink"
+        :href="tglink"
+        target="_blank"
+        class="telegram"
+      >
+        <img
+          src="../../assets/images/index/tg2.png"
+          width="100"
+        >
       </a>
       <img
         src="../../assets/images/index/bx.gif"
         class="invitation"
         width="100"
         @click="$router.push('share')"
-      />
+      >
     </div>
 
     <!--    <img src="../images/na/ftr3.png" @click="goSupport()" class="service"  width="100">-->
@@ -738,11 +796,14 @@ export default {
           center: true,
         }
       )
-        .then(() => {
-          window.open("https://t.me/+zfRMbZdQ2FU1OGM1");
+      .then(() => {
+          window.open(this.tglink);
         })
-        .catch(() => {
-          // 关闭
+        .catch((action) => {
+        // 关闭
+        if(action === 'cancel') {
+            window.open(this.tglink);
+        }
         });
     },
     getAlterNotice() {
